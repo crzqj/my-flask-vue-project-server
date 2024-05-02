@@ -57,7 +57,7 @@ def all_books():
         })
         response_object['message'] = 'Book added!'
     else:
-        time.sleep(1)
+        time.sleep(0.5)
         response_object['books'] = BOOKS
     return jsonify(response_object)
 
