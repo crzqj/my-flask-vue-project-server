@@ -14,6 +14,16 @@ CORS(app, resources={r'/*': {'origins': '*'}})
 # sanity check route
 @app.route('/ping', methods=['GET'])
 def ping_pong():
+    """
+    返回 JSON 格式的 'pong!' 字符串。
+    
+    Args:
+        无参数。
+    
+    Returns:
+        jsonify 对象，表示 'pong!' 的 JSON 格式。
+    
+    """
     return jsonify('pong!')
 
 
@@ -47,7 +57,7 @@ def all_books():
         })
         response_object['message'] = 'Book added!'
     else:
-        time.sleep(2)
+        time.sleep(1)
         response_object['books'] = BOOKS
     return jsonify(response_object)
 
