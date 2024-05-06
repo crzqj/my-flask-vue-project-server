@@ -25,3 +25,23 @@ with app.app_context():
     db.session.commit()
 
     print('插入成功!')
+
+def generate_fibonacci(n):
+    """
+    生成Fibonacci数列的前n项。
+
+    Args:
+        n (int): 要生成的数列项数。
+
+    Returns:
+        list: Fibonacci数列的前n项。
+    """
+    result = []
+    a, b = 0, 1
+    while len(result) < n:
+        result.append(a)
+        a, b = b, a + b
+    return result
+
+
+print(generate_fibonacci(20))
